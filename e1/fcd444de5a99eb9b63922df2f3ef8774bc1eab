@@ -1,0 +1,57 @@
+.github/workflows/deploy.yml
+  s_ee1ffd8b1e7651::t_7972857662341d 1-44
+.gitignore
+  s_ee1ffd8b1e7651::t_a1265f08e1864e 1-27
+.npmrc
+  s_ee1ffd8b1e7651::t_74345aa685319d 1
+.oxlintrc.json
+  s_ee1ffd8b1e7651::t_ddfbb7a1eff745 1-8
+README.md
+  s_ee1ffd8b1e7651::t_51dcf7426ed000 1-32
+index.html
+  s_ee1ffd8b1e7651::t_16bc11cc0162c2 1-13
+package.json
+  s_ee1ffd8b1e7651::t_4e71fd510e8f25 1-29
+pnpm-lock.yaml
+  s_ee1ffd8b1e7651::t_50971a9e40ef14 1-965
+public/favicon.svg
+  s_ee1ffd8b1e7651::t_69b41fa338ac27 1
+public/icons.svg
+  s_ee1ffd8b1e7651::t_7285187be5e7ae 1-24
+src/App.css
+  s_ee1ffd8b1e7651::t_a318bcdbd9f7e9 1-184
+src/App.tsx
+  s_ee1ffd8b1e7651::t_52ff2a7d6ba2df 1-122
+src/assets/react.svg
+  s_ee1ffd8b1e7651::t_fd8e5a4e4d4101 1
+src/assets/vite.svg
+  s_ee1ffd8b1e7651::t_56cb6793812c36 1
+src/index.css
+  s_ee1ffd8b1e7651::t_6082d037183e8f 1-111
+src/main.tsx
+  s_ee1ffd8b1e7651::t_3862bfe0eb36ee 1-10
+tsconfig.app.json
+  s_ee1ffd8b1e7651::t_874472afdb6c98 1-26
+tsconfig.json
+  s_ee1ffd8b1e7651::t_6bad5dec0c8be8 1-7
+tsconfig.node.json
+  s_ee1ffd8b1e7651::t_724829e38751b6 1-23
+vite.config.ts
+  s_ee1ffd8b1e7651::t_aa9478fdcbd5de 1-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e1fcd444de5a99eb9b63922df2f3ef8774bc1eab",
+  "prompts": {},
+  "sessions": {
+    "s_ee1ffd8b1e7651": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0caf382b-c2a8-4f23-a9a2-0339251ab3c2",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
