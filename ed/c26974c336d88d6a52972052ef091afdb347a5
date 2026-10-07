@@ -1,0 +1,21 @@
+.github/workflows/ci.yml
+  s_ee1ffd8b1e7651::t_41614ecb9b0205 1-30
+.github/workflows/deploy.yml
+  s_ee1ffd8b1e7651::t_f1db186b5bfea2 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "edc26974c336d88d6a52972052ef091afdb347a5",
+  "prompts": {},
+  "sessions": {
+    "s_ee1ffd8b1e7651": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0caf382b-c2a8-4f23-a9a2-0339251ab3c2",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
