@@ -1,0 +1,25 @@
+package.json
+  s_ee1ffd8b1e7651::t_e3d7bed9355b1a 12-13
+scripts/riftcodex-sample.ts
+  s_ee1ffd8b1e7651::t_320c0088fd4c9e 1-67
+scripts/samples/riftcodex-sample.json
+  s_ee1ffd8b1e7651::t_a224e077d070f8 1-1112
+tsconfig.node.json
+  s_ee1ffd8b1e7651::t_f8df1dde9bba57 22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ccb8972f8ad56ee69fc045eb639b1b35154db221",
+  "prompts": {},
+  "sessions": {
+    "s_ee1ffd8b1e7651": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0caf382b-c2a8-4f23-a9a2-0339251ab3c2",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
