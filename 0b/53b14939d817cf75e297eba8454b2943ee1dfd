@@ -1,0 +1,21 @@
+src/parsing/deckCode.test.ts
+  s_1278e477482704::t_22e42f01bab829 1-170
+src/parsing/deckCode.ts
+  s_1278e477482704::t_80f6ca8d767e23 1-106
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0b53b14939d817cf75e297eba8454b2943ee1dfd",
+  "prompts": {},
+  "sessions": {
+    "s_1278e477482704": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "909aec16-7eab-4072-a1b8-a2efcb678fd1",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
