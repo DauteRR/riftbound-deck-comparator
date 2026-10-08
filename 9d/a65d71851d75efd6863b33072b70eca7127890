@@ -1,0 +1,21 @@
+src/ui/CardTile.tsx
+  s_1278e477482704::t_a373814aec4623 42
+src/ui/Section.tsx
+  s_1278e477482704::t_bd0a3c6211169a 19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9da65d71851d75efd6863b33072b70eca7127890",
+  "prompts": {},
+  "sessions": {
+    "s_1278e477482704": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "909aec16-7eab-4072-a1b8-a2efcb678fd1",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
