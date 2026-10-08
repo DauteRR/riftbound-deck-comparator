@@ -16,7 +16,7 @@ type SectionProps = {
 export function Section({ title, onlyA, onlyB, common }: SectionProps) {
   return (
     <section className="flex flex-col gap-6 [--card-width:clamp(8rem,10vw,15rem)]">
-      <h2 className="border-b border-gold/80 pb-3 text-3xl text-gold font-bold tracking-tight">{title}</h2>
+      <h2 className="border-b-4 border-gold/80 pb-3 text-3xl text-gold font-bold tracking-tight">{title}</h2>
 
       <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-x-6">
         <div className="flex flex-wrap content-start justify-end gap-4">

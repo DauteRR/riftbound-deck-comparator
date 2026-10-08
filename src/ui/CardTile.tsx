@@ -39,7 +39,7 @@ export function CardTile({ card, count, side }: CardTileProps) {
 
       <span
         className={cn(
-          'absolute bottom-2 left-1/2 -translate-x-1/2 rounded-md px-2.5 py-1 text-base leading-none font-bold',
+          'absolute bottom-2 left-1/2 -translate-x-1/2 rounded-md px-3 py-1.5 text-xl leading-none font-bold',
           side === 'a' && 'bg-side-a text-side-a-deep',
           side === 'b' && 'bg-side-b text-side-b-deep',
           !side && 'bg-side-b-light text-side-b-deep',
