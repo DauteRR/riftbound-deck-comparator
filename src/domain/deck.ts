@@ -23,3 +23,13 @@ export function createEmptyDeck(): Deck {
     unknown: [],
   }
 }
+
+export function addEntry(entries: DeckEntry[], entry: DeckEntry) {
+  const existing = entries.find((candidate) => candidate.code === entry.code)
+
+  if (existing) {
+    existing.count += entry.count
+  } else {
+    entries.push({ ...entry })
+  }
+}

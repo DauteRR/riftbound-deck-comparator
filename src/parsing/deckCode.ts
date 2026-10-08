@@ -5,6 +5,7 @@ import {
 } from '@piltoverarchive/riftbound-deck-codes'
 import type { CardCatalog } from '@/domain/cards'
 import { createEmptyDeck, type Deck, type DeckEntry } from '@/domain/deck'
+import { addAdditionalLegend, placeByCardType } from '@/parsing/placeByCardType'
 
 function toDeckEntry({ cardCode, count }: LibraryCard): DeckEntry {
   return { code: cardCode, count }
@@ -40,7 +41,10 @@ function addOneCopy(entries: DeckEntry[], code: string): DeckEntry[] {
 export function decodeDeckCode(code: string, catalog: CardCatalog): Deck {
   const decoded = getDeckFromCode(code, { signedSuffix: '*' })
   const deck = createEmptyDeck()
-  const additionalLegends = (decoded.additionalLegends ?? []).map(toSingleCopy)
+
+  for (const legendCode of decoded.additionalLegends ?? []) {
+    addAdditionalLegend(deck, toSingleCopy(legendCode))
+  }
 
   const mainArray = decoded.mainDeck.map(toDeckEntry)
   const cards = decoded.chosenChampion
@@ -48,39 +52,13 @@ export function decodeDeckCode(code: string, catalog: CardCatalog): Deck {
     : mainArray
 
   for (const entry of cards) {
-
-    switch (catalog.findByCode(entry.code)?.type) {
-      case 'Legend':
-        if (deck.legend) {
-          additionalLegends.push(entry)
-        } else {
-          deck.legend = entry
-        }
-        break
-      case 'Battlefield':
-        deck.battlefields.push(entry)
-        break
-      case 'Rune':
-        deck.runes.push(entry)
-        break
-      case 'Unit':
-      case 'Spell':
-      case 'Gear':
-        deck.main.push(entry)
-        break
-      default:
-        deck.unknown.push(entry)
-    }
+    placeByCardType(deck, entry, catalog)
   }
 
   deck.sideboard = decoded.sideboard.map(toDeckEntry)
 
   if (decoded.chosenChampion) {
     deck.champion = toSingleCopy(decoded.chosenChampion)
-  }
-
-  if (additionalLegends.length > 0) {
-    deck.additionalLegends = additionalLegends
   }
 
   return deck

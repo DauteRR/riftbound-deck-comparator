@@ -62,3 +62,26 @@ describe('cardKey', () => {
     expect(catalog.cardKey('XXX-999')).toBe('XXX-999')
   })
 })
+
+describe('findBaseByName', () => {
+  it('returns the base printing of a card', () => {
+    expect(catalog.findBaseByName('Body Rune')?.code).toBe('OGN-126')
+  })
+
+  it('returns the base printing even when a variant is listed first', () => {
+    const variantFirst = createCardCatalog([
+      buildCard({ code: 'OGN-126a', name: 'Body Rune', isAlternate: true }),
+      buildCard({ code: 'OGN-126', name: 'Body Rune' }),
+    ])
+
+    expect(variantFirst.findBaseByName('Body Rune')?.code).toBe('OGN-126')
+  })
+
+  it('ignores case', () => {
+    expect(catalog.findBaseByName('bODY rUNE')?.code).toBe('OGN-126')
+  })
+
+  it('returns undefined for an unknown name', () => {
+    expect(catalog.findBaseByName('Nonexistent Card')).toBeUndefined()
+  })
+})
