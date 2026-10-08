@@ -17,9 +17,15 @@ export type GalleryCard = {
   cardImage: { url: string }
 }
 
+export type GallerySet = {
+  id: string
+  name: string
+  collectorNumberMax: number
+}
+
 type GalleryBlade = {
   type: string
-  sets?: unknown
+  sets?: { items: GallerySet[] }
   cards?: { items: GalleryCard[] }
 }
 
@@ -27,8 +33,8 @@ type NextData = {
   props: { pageProps: { page: { blades: GalleryBlade[] } } }
 }
 
-type Gallery = {
-  sets: unknown
+export type Gallery = {
+  sets: GallerySet[]
   cards: GalleryCard[]
 }
 
@@ -51,9 +57,9 @@ export async function fetchGallery(): Promise<Gallery> {
 
   const nextData = JSON.parse(match[1]) as NextData
   const blade = nextData.props.pageProps.page.blades.find((candidate) => candidate.type === 'riftboundCardGallery')
-  if (!blade?.cards) throw new Error('riftboundCardGallery blade not found')
+  if (!blade?.cards || !blade.sets) throw new Error('riftboundCardGallery blade not found')
 
-  const gallery = { sets: blade.sets, cards: blade.cards.items }
+  const gallery = { sets: blade.sets.items, cards: blade.cards.items }
   await saveRawGallery(gallery)
 
   return gallery

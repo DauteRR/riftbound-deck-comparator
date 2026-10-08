@@ -11,5 +11,8 @@ export type Card = {
   type: CardType
   cost?: CardCost
   isAlternate: boolean
+  isOvernumbered: boolean
+  isSigned: boolean
+  isSpecial: boolean
   imageUrl: string
 }
