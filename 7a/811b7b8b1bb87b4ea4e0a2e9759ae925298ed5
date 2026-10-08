@@ -1,0 +1,25 @@
+scripts/convert-cards.ts
+  s_1278e477482704::t_999266b24e2251 2,63,94,96,146
+src/domain/cardCode.ts
+  s_1278e477482704::t_d40ff41c7ebc25 1-30
+src/domain/sort.test.ts
+  s_1278e477482704::t_24d3f5e4654b6f 1-80
+src/domain/sort.ts
+  s_1278e477482704::t_0ee4c326fd7de6 1-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7a811b7b8b1bb87b4ea4e0a2e9759ae925298ed5",
+  "prompts": {},
+  "sessions": {
+    "s_1278e477482704": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "909aec16-7eab-4072-a1b8-a2efcb678fd1",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
