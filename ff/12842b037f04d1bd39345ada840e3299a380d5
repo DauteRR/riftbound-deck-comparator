@@ -1,0 +1,23 @@
+src/domain/cards.test.ts
+  s_1278e477482704::t_f22f85e77170f2 1-64
+src/domain/cards.ts
+  s_1278e477482704::t_b601bd1f7b639d 1-20
+src/domain/deck.ts
+  s_1278e477482704::t_fe275cdde0b60c 1-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ff12842b037f04d1bd39345ada840e3299a380d5",
+  "prompts": {},
+  "sessions": {
+    "s_1278e477482704": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "909aec16-7eab-4072-a1b8-a2efcb678fd1",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
