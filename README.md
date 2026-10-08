@@ -1,6 +1,12 @@
+<div align="center">
+
+<img src="public/logo.png" alt="Riftbound Deck Comparator logo" width="160" />
+
 # Riftbound Deck Comparator
 
-> 🔍 **Two decks. One glance. Every difference.**
+<p>Two decks. One glance. Every difference</p>
+
+</div>
 
 Paste two [Riftbound](https://playriftbound.com) decklists and instantly see which cards differ: in the main deck, the runes, the sideboard and the battlefields. You also get an exact list of swaps to turn one deck into the other on the table.
 
