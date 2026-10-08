@@ -1,5 +1,5 @@
-import { SET_MAP } from '@piltoverarchive/riftbound-deck-codes'
 import type { Card, CardType } from '../src/domain/card.ts'
+import { compareCardCodes, parseCardCode } from '../src/domain/cardCode.ts'
 import type { Gallery, GalleryCard } from './fetch-gallery.ts'
 
 const CARD_TYPES: CardType[] = ['Legend', 'Unit', 'Spell', 'Gear', 'Rune', 'Battlefield']
@@ -19,13 +19,6 @@ export type ConversionResult = {
 }
 
 type ConvertedCard = Omit<Card, 'isAlternate'>
-
-type ParsedCode = {
-  set: string
-  prefix: string
-  number: number
-  variant: string
-}
 
 const toCode = (galleryCard: GalleryCard) => galleryCard.publicCode.split('/')[0]
 
@@ -66,18 +59,8 @@ function buildName(galleryCard: GalleryCard, type: CardType): string {
   return galleryCard.name
 }
 
-function parseCode(code: string): ParsedCode {
-  const match = code.match(/^([A-Z]+)-(R|SP)?(\d+)([a-z*]?)$/)
-  if (!match) throw new Error(`Unexpected card code: ${code}`)
-
-  const [, set, prefix = '', number, variant] = match
-  if (!(set in SET_MAP)) throw new Error(`Unknown set "${set}" in ${code}`)
-
-  return { set, prefix, number: Number(number), variant }
-}
-
 function buildVariantFlags(code: string, collectorNumberMax: Map<string, number>) {
-  const { set, prefix, number, variant } = parseCode(code)
+  const { set, prefix, number, variant } = parseCardCode(code)
 
   return {
     isOvernumbered: prefix === '' && number > (collectorNumberMax.get(set) ?? 0),
@@ -90,18 +73,6 @@ function buildCost(galleryCard: GalleryCard): Card['cost'] {
   if (!galleryCard.energy) return undefined
 
   return { energy: galleryCard.energy.value.id, power: galleryCard.power?.value.id ?? 0 }
-}
-
-function compareCodes(first: string, second: string): number {
-  const a = parseCode(first)
-  const b = parseCode(second)
-
-  return (
-    SET_MAP[a.set] - SET_MAP[b.set] ||
-    a.prefix.localeCompare(b.prefix) ||
-    a.number - b.number ||
-    a.variant.localeCompare(b.variant)
-  )
 }
 
 function groupByName(cards: ConvertedCard[]): Map<string, ConvertedCard[]> {
@@ -120,9 +91,9 @@ function findBaseCodes(cards: ConvertedCard[]): Set<string> {
   const baseCodes = new Set<string>()
 
   for (const printings of groupByName(cards).values()) {
-    const sortedPrintings = printings.sort((a, b) => compareCodes(a.code, b.code))
+    const sortedPrintings = printings.sort((a, b) => compareCardCodes(a.code, b.code))
     const baseCandidates = sortedPrintings.filter(
-      (card) => parseCode(card.code).variant === '' && !card.isOvernumbered && !card.isSpecial,
+      (card) => parseCardCode(card.code).variant === '' && !card.isOvernumbered && !card.isSpecial,
     )
 
     baseCodes.add((baseCandidates[0] ?? sortedPrintings[0]).code)
@@ -172,7 +143,7 @@ export function convertGalleryCards(gallery: Gallery): ConversionResult {
 
   const cards = convertedCards
     .map((card) => ({ ...card, isAlternate: !baseCodes.has(card.code) }))
-    .sort((a, b) => compareCodes(a.code, b.code))
+    .sort((a, b) => compareCardCodes(a.code, b.code))
 
   return { cards, discardedCards }
 }
