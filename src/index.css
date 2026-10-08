@@ -6,6 +6,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+    --color-gold: var(--gold);
     --color-side-a: var(--side-a);
     --color-side-a-strong: var(--side-a-strong);
     --color-side-a-muted: var(--side-a-muted);
@@ -112,6 +113,7 @@
     --border: #38b6ff33;
     --input: #38b6ff40;
     --ring: #38b6ff;
+    --gold: #f8c674;
     --side-a: #38b6ff;
     --side-a-strong: #2a6dff;
     --side-a-muted: #0f2a5b;
