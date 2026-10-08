@@ -1,0 +1,35 @@
+src/domain/deck.ts
+  s_1278e477482704::t_6469172c3c5b05 26-35
+src/parsing/deckCode.test.ts
+  s_1278e477482704::t_e24700607f9727 8
+src/parsing/deckCode.ts
+  s_1278e477482704::t_710ea52850597e 8,44-47,55
+src/parsing/placeByCardType.ts
+  s_1278e477482704::t_42192d1af72f21 1-32
+src/parsing/testDecks.ts
+  s_1278e477482704::t_50f9cd3092a9de 1-137
+src/domain/cards.test.ts
+  s_1278e477482704::t_0378a08446658a 65-87
+src/domain/cards.ts
+  s_1278e477482704::t_13ae5b646d989e 5,9-12,15-24,30-33,38
+src/parsing/textParser.test.ts
+  s_1278e477482704::t_653e8d1372005f 1-136
+src/parsing/textParser.ts
+  s_1278e477482704::t_21b113c3e88671 1-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "240c46aa6e4895f277bf5ec27c19edb1c21ec918",
+  "prompts": {},
+  "sessions": {
+    "s_1278e477482704": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "909aec16-7eab-4072-a1b8-a2efcb678fd1",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
