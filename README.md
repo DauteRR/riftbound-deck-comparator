@@ -50,6 +50,16 @@ The script downloads the gallery, filters and converts the cards, and rewrites `
 
 > ⚠️ **Important:** the app only knows the cards that are in that file. Run `pnpm update-cards` and commit the result **every time a new set comes out** (and whenever new cards are revealed). Otherwise, decks that use the new cards will show them as unknown.
 
+## 🤝 Contributing
+
+Contributions are welcome! If you want to add a feature or fix something, open a pull request. For anything big, please open an issue first so we can talk about it.
+
+## 🐛 Found a bug?
+
+If you find a bug, a wrong comparison or any behavior that looks off, I would really appreciate it if you let me know by [opening an issue](https://github.com/DauteRR/riftbound-deck-comparator/issues). Including the two decks (the deck codes or the decklists) that triggered it makes it much easier to reproduce.
+
+Ideas and suggestions are welcome there too.
+
 ## 📜 Disclaimer
 
 Riftbound Deck Comparator is an unofficial fan project. It is not affiliated with, endorsed or sponsored by Riot Games, Riftbound or League of Legends. It was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riftbound, League of Legends, and all related names, card text and artwork are trademarks or property of Riot Games, Inc.
