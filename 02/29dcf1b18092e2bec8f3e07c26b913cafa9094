@@ -1,0 +1,29 @@
+src/index.css
+  s_1278e477482704::t_266a1fb4378926 10-19,117-126
+src/ui/CardTile.tsx
+  s_1278e477482704::t_d337a7ae32c87c 4,29-30,43-45
+src/ui/Section.tsx
+  s_1278e477482704::t_79db58a7526d60 11-12,16,23-24,31-32
+src/ui/sampleSection.ts
+  s_1278e477482704::t_51dbd1d39678be 19-20
+src/url.test.ts
+  s_1278e477482704::t_54ed5d73fcc970 63-64,90,98,106
+src/url.ts
+  s_1278e477482704::t_cb984b25ceb29e 6,8-9,18,20-21,23,26-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0229dcf1b18092e2bec8f3e07c26b913cafa9094",
+  "prompts": {},
+  "sessions": {
+    "s_1278e477482704": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "909aec16-7eab-4072-a1b8-a2efcb678fd1",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
