@@ -17,6 +17,15 @@ export function parseCardCode(code: string): ParsedCardCode {
   return { set, prefix, number: Number(number), variant }
 }
 
+export function isCardCode(code: string): boolean {
+  try {
+    parseCardCode(code)
+    return true
+  } catch {
+    return false
+  }
+}
+
 export function compareCardCodes(first: string, second: string): number {
   const a = parseCardCode(first)
   const b = parseCardCode(second)

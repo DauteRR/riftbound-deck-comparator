@@ -3,6 +3,7 @@ import {
   getDeckFromCode,
   type Card as LibraryCard,
 } from '@piltoverarchive/riftbound-deck-codes'
+import { isCardCode } from '@/domain/cardCode'
 import type { CardCatalog } from '@/domain/cards'
 import { createEmptyDeck, type Deck, type DeckEntry } from '@/domain/deck'
 import { addAdditionalLegend, placeByCardType } from '@/parsing/placeByCardType'
@@ -72,7 +73,7 @@ export function encodeDeckCode(deck: Deck): string {
     ...main,
     ...deck.battlefields,
     ...deck.runes,
-    ...deck.unknown,
+    ...deck.unknown.filter((entry) => isCardCode(entry.code)),
   ].map(toLibraryCard)
 
   return getCodeFromDeck(
