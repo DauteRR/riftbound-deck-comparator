@@ -29,15 +29,15 @@ export function Section({
   hasHorizontalCards = false,
 }: SectionProps) {
   const sideWidthClass = hasHorizontalCards
-    ? 'max-w-[calc(var(--card-width)*1.4*4+var(--card-gap)*3)]'
-    : 'max-w-[calc(var(--card-width)*4+var(--card-gap)*3)]'
+    ? 'max-w-[calc(var(--card-width)*1.4*var(--columns)+var(--card-gap)*(var(--columns)-1))]'
+    : 'max-w-[calc(var(--card-width)*var(--columns)+var(--card-gap)*(var(--columns)-1))]'
 
   return (
     <section className="@container">
-      <div className="flex flex-col gap-6 [--card-gap:1.5rem] [--card-width:clamp(6rem,calc((100cqw-8rem-8px)/8-var(--card-gap)*3/4),14rem)]">
-        <h2 className="border-b-4 border-gold/80 pb-3 text-3xl text-gold font-bold tracking-tight">{title}</h2>
+      <div className="flex flex-col gap-6 [--card-gap:1.5rem] [--columns:1] [--divider-gap:1rem] @[45rem]:[--columns:2] @[45rem]:[--divider-gap:2rem] @[65rem]:[--columns:3] @[65rem]:[--divider-gap:3rem] @[85rem]:[--columns:4] @[85rem]:[--divider-gap:4rem] [--card-width:clamp(6rem,calc(((100cqw-var(--divider-gap)*2-8px)/2-(var(--columns)-1)*var(--card-gap))/var(--columns)),13rem)]">
+        <h2 className="border-b-4 border-gold/80 pb-3 text-center text-3xl font-bold tracking-tight text-gold md:text-left">{title}</h2>
 
-        <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-x-16">
+        <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-x-(--divider-gap)">
           <div className={cn('ml-auto flex w-full flex-wrap content-start justify-end gap-6', sideWidthClass)}>
             {onlyLeft.map((entry) => (
               <CardTile key={entry.code} {...entry} side="left" />

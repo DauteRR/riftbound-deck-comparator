@@ -32,7 +32,7 @@ function App() {
           alt=""
           className="size-32"
         />
-        <h1 className="text-4xl font-bold tracking-tight text-gold">Riftbound Deck Comparator</h1>
+        <h1 className="text-center text-4xl font-bold tracking-tight text-gold">Riftbound Deck Comparator</h1>
       </header>
 
       <div className="mx-auto max-w-[120rem] px-8 py-4">
