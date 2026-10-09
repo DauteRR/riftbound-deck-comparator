@@ -4,6 +4,7 @@ import type { Deck, DeckEntry } from '@/domain/deck'
 
 export type SectionId =
   | 'legendAndChosen'
+  | 'additionalLegends'
   | 'main'
   | 'sideboard'
   | 'battlefields'
@@ -37,6 +38,7 @@ const RUNES_SIZE = 12
 
 const SECTION_IDS: SectionId[] = [
   'legendAndChosen',
+  'additionalLegends',
   'main',
   'sideboard',
   'battlefields',
@@ -53,7 +55,7 @@ function missingFrom(expected: number, present: number): number {
 }
 
 function legendAndChosenEntries(deck: Deck): SectionEntries {
-  const entries = [deck.legend, ...(deck.additionalLegends ?? []), deck.champion].filter(
+  const entries = [deck.legend, deck.champion].filter(
     (entry): entry is DeckEntry => entry !== undefined,
   )
   const gaps = (deck.legend ? 0 : 1) + (deck.champion ? 0 : 1)
@@ -65,6 +67,8 @@ function sectionEntries(deck: Deck, id: SectionId): SectionEntries {
   switch (id) {
     case 'legendAndChosen':
       return legendAndChosenEntries(deck)
+    case 'additionalLegends':
+      return { entries: deck.additionalLegends ?? [], gaps: 0 }
     case 'main':
       return { entries: deck.main, gaps: 0 }
     case 'sideboard':

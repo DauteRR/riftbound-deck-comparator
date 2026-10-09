@@ -2,6 +2,7 @@ import type { SectionId } from '@/diff/diffDecks'
 
 export const SECTION_TITLES: [SectionId, string][] = [
   ['legendAndChosen', 'Legend & Chosen'],
+  ['additionalLegends', 'Additional legends'],
   ['main', 'Main deck'],
   ['sideboard', 'Sideboard'],
   ['battlefields', 'Battlefields'],

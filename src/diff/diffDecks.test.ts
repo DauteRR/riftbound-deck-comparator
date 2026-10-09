@@ -114,21 +114,23 @@ describe('diffDecks', () => {
     expect(main.onlyLeft.map((entry) => entry.code)).toEqual(['OGN-002', 'OGN-003', 'ZZZ-999'])
   })
 
-  it('merges legend, additional legends and champion in one section', () => {
+  it('merges legend and champion in one section and keeps additional legends apart', () => {
     const left = createEmptyDeck()
     const right = createEmptyDeck()
     left.legend = { code: 'OGN-100', count: 1 }
     left.champion = { code: 'OGN-200', count: 1 }
-    right.legend = { code: 'OGN-101', count: 1 }
-    right.additionalLegends = [{ code: 'OGN-100', count: 1 }]
+    right.legend = { code: 'OGN-100', count: 1 }
+    right.additionalLegends = [{ code: 'OGN-101', count: 1 }]
     right.champion = { code: 'OGN-200', count: 1 }
 
-    const { legendAndChosen } = diffDecks(left, right, catalog)
+    const { legendAndChosen, additionalLegends } = diffDecks(left, right, catalog)
 
     expect(legendAndChosen.common.map((entry) => entry.code)).toEqual(['OGN-100', 'OGN-200'])
-    expect(legendAndChosen.onlyRight).toEqual([{ code: 'OGN-101', count: 1 }])
+    expect(legendAndChosen.onlyRight).toEqual([])
     expect(legendAndChosen.leftGaps).toBe(0)
     expect(legendAndChosen.rightGaps).toBe(0)
+    expect(additionalLegends.onlyRight).toEqual([{ code: 'OGN-101', count: 1 }])
+    expect(additionalLegends.leftGaps).toBe(0)
   })
 
   it('reports gaps in fixed-size sections', () => {

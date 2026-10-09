@@ -15,6 +15,7 @@ type Surplus = { code: string; remaining: number; section: SectionId }
 
 const SECTION_ORDER: SectionId[] = [
   'legendAndChosen',
+  'additionalLegends',
   'main',
   'sideboard',
   'battlefields',
