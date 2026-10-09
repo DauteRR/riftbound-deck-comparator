@@ -23,10 +23,6 @@ Paste two [Riftbound](https://playriftbound.com) decklists and instantly see whi
 2. See the differences section by section (legend and chosen champion, main deck, sideboard, battlefields and runes), with card art.
 3. Copy the link and share it.
 
-## 🚧 Status
-
-Work in progress. The card data pipeline is ready; the app itself is under construction.
-
 ## 🛠️ Development
 
 You need [Node.js](https://nodejs.org) 22.18 or newer and [pnpm](https://pnpm.io).
@@ -36,7 +32,7 @@ pnpm install
 pnpm dev
 ```
 
-Other useful scripts: `pnpm build`, `pnpm test` and `pnpm lint`.
+Other useful scripts: `pnpm build`, `pnpm test`, `pnpm lint` and `pnpm test:e2e` (a Playwright smoke test; run `pnpm exec playwright install chromium` once first).
 
 ### 🃏 Updating the card data
 
@@ -59,6 +55,10 @@ Contributions are welcome! If you want to add a feature or fix something, open a
 If you find a bug, a wrong comparison or any behavior that looks off, I would really appreciate it if you let me know by [opening an issue](https://github.com/DauteRR/riftbound-deck-comparator/issues). Including the two decks (the deck codes or the decklists) that triggered it makes it much easier to reproduce.
 
 Ideas and suggestions are welcome there too.
+
+## 📄 License
+
+The source code is released under the [MIT License](LICENSE). Card data, names, text and artwork belong to Riot Games and are not covered by this license.
 
 ## 📜 Disclaimer
 
