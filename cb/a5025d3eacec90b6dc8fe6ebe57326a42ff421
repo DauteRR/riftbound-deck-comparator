@@ -1,0 +1,31 @@
+src/App.tsx
+  s_7d3470d70dd0f7::t_7dd79cab2742e5 17
+src/ui/CardTile.tsx
+  s_7d3470d70dd0f7::t_9eb31ffc48571b 1,4-5,10-11,16,18-20,26,29,32-42,52
+src/ui/GapTile.tsx
+  s_7d3470d70dd0f7::t_ca44b28d8e14d3 1-23
+src/ui/Section.tsx
+  s_7d3470d70dd0f7::t_50af63a0dfc69f 2,4,7-8,17-19,22-34,36-38,40-48,50,52-59,62-66
+src/ui/cardImage.ts
+  s_7d3470d70dd0f7::t_e675cfa970bb42 1-8
+src/ui/sectionProps.ts
+  s_7d3470d70dd0f7::t_e81df9a9a4b824 7,16-18
+src/ui/tileSize.ts
+  s_7d3470d70dd0f7::t_2309ee803dffb8 1-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cba5025d3eacec90b6dc8fe6ebe57326a42ff421",
+  "prompts": {},
+  "sessions": {
+    "s_7d3470d70dd0f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4d0472a3-adbf-4c4a-a56f-11a99e00e290",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
