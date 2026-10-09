@@ -1,0 +1,21 @@
+src/App.tsx
+  s_7d3470d70dd0f7::t_3f021f27aa4ad4 35
+src/ui/Section.tsx
+  s_7d3470d70dd0f7::t_463c4a74b3ee99 32-33,37-38,40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c330660da1ad77b09aacac4a3194e4c6e04959c2",
+  "prompts": {},
+  "sessions": {
+    "s_7d3470d70dd0f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4d0472a3-adbf-4c4a-a56f-11a99e00e290",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
