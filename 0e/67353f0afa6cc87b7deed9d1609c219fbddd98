@@ -1,0 +1,23 @@
+src/App.tsx
+  s_7d3470d70dd0f7::t_ed504767af55a8 1-4,6-23,38-46
+src/data/catalog.ts
+  s_7d3470d70dd0f7::t_fd927c9861d6c6 2-3,5
+src/ui/sectionProps.ts
+  s_7d3470d70dd0f7::t_016f073d79ff33 1-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0e67353f0afa6cc87b7deed9d1609c219fbddd98",
+  "prompts": {},
+  "sessions": {
+    "s_7d3470d70dd0f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4d0472a3-adbf-4c4a-a56f-11a99e00e290",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
