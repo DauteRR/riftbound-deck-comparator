@@ -79,3 +79,19 @@ export function buildChangeList(diff: DeckDiff, catalog: CardCatalog): ChangeLis
 
   return { remove, move, add }
 }
+
+export type SectionChanges = {
+  section: SectionId
+  remove: RemoveChange[]
+  move: MoveChange[]
+  add: AddChange[]
+}
+
+export function groupChangesBySection(changes: ChangeList): SectionChanges[] {
+  return SECTION_ORDER.map((section) => ({
+    section,
+    remove: changes.remove.filter((change) => change.section === section),
+    move: changes.move.filter((change) => change.from === section),
+    add: changes.add.filter((change) => change.section === section),
+  })).filter(({ remove, move, add }) => remove.length + move.length + add.length > 0)
+}

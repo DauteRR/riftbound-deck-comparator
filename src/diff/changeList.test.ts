@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import type { Card } from '@/domain/card'
 import { createCardCatalog } from '@/domain/cards'
 import { createEmptyDeck } from '@/domain/deck'
-import { buildChangeList } from '@/diff/changeList'
+import { buildChangeList, groupChangesBySection } from '@/diff/changeList'
 import { diffDecks } from '@/diff/diffDecks'
 
 function buildCard(code: string, name: string, overrides: Partial<Card> = {}): Card {
@@ -131,5 +131,54 @@ describe('buildChangeList', () => {
       { code: 'RAD-001', count: 1, section: 'unknown' },
     ])
     expect(changes.add).toEqual([])
+  })
+})
+
+describe('groupChangesBySection', () => {
+  it('groups changes by section in section order, moves under their origin', () => {
+    const changes = changesBetween(
+      (deck) => {
+        deck.legend = { code: 'OGN-003', count: 1 }
+        deck.main = [{ code: 'OGN-001', count: 2 }]
+        deck.sideboard = [{ code: 'OGN-002', count: 1 }]
+      },
+      (deck) => {
+        deck.main = [
+          { code: 'OGN-002', count: 1 },
+          { code: 'OGN-003', count: 1 },
+        ]
+        deck.sideboard = [{ code: 'OGN-001', count: 1 }]
+      },
+    )
+
+    expect(groupChangesBySection(changes)).toEqual([
+      {
+        section: 'legendAndChosen',
+        remove: [],
+        move: [{ code: 'OGN-003', count: 1, from: 'legendAndChosen', to: 'main' }],
+        add: [],
+      },
+      {
+        section: 'main',
+        remove: [{ code: 'OGN-001', count: 1, section: 'main' }],
+        move: [{ code: 'OGN-001', count: 1, from: 'main', to: 'sideboard' }],
+        add: [],
+      },
+      {
+        section: 'sideboard',
+        remove: [],
+        move: [{ code: 'OGN-002', count: 1, from: 'sideboard', to: 'main' }],
+        add: [],
+      },
+    ])
+  })
+
+  it('skips sections without changes', () => {
+    const changes = changesBetween(
+      () => {},
+      (deck) => (deck.main = [{ code: 'OGN-001', count: 1 }]),
+    )
+
+    expect(groupChangesBySection(changes).map(({ section }) => section)).toEqual(['main'])
   })
 })

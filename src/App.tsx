@@ -1,24 +1,18 @@
 import { useMemo, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { catalog } from '@/data/catalog'
-import { diffDecks, type SectionId } from '@/diff/diffDecks'
+import { buildChangeList } from '@/diff/changeList'
+import { diffDecks } from '@/diff/diffDecks'
 import type { Deck } from '@/domain/deck'
 import { parseDeckInput } from '@/parsing/detect'
 import { readDecksFromSearch } from '@/url'
+import { ChangeList } from '@/ui/ChangeList'
 import { DeckInputs } from '@/ui/DeckInputs'
 import { Section } from '@/ui/Section'
+import { SECTION_TITLES } from '@/ui/sectionTitles'
 import { toSectionProps } from '@/ui/sectionProps'
 
 type ComparedDecks = { leftDeck: Deck; rightDeck: Deck }
-
-const SECTION_TITLES: [SectionId, string][] = [
-  ['legendAndChosen', 'Legend & Chosen'],
-  ['main', 'Main deck'],
-  ['sideboard', 'Sideboard'],
-  ['battlefields', 'Battlefields'],
-  ['runes', 'Runes'],
-  ['unknown', 'Unknown cards'],
-]
 
 function readInitialDecks(): ComparedDecks | undefined {
   try {
@@ -91,6 +85,8 @@ function App() {
               [onlyLeft, onlyRight, common].some((entries) => entries.length > 0),
             )
             .map(({ id, ...props }) => <Section key={id} {...props} />)}
+
+        {diff && <ChangeList changes={buildChangeList(diff, catalog)} catalog={catalog} />}
       </div>
     </main>
   )
