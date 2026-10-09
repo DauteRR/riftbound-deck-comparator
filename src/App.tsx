@@ -14,6 +14,7 @@ const SECTION_TITLES: [SectionId, string][] = [
   ['sideboard', 'Sideboard'],
   ['battlefields', 'Battlefields'],
   ['runes', 'Runes'],
+  ['unknown', 'Unknown cards'],
 ]
 
 const diff = diffDecks(

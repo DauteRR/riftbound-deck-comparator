@@ -1,41 +1,45 @@
+import { useState } from 'react'
 import type { Card } from '@/domain/card'
 import { cn } from '@/lib/utils'
+import { thumbnailUrl } from '@/ui/cardImage'
+import { tileSizeClass } from '@/ui/tileSize'
 
 export type TileSide = 'left' | 'right'
 
 type CardTileProps = {
-  card: Card
+  code: string
+  card?: Card
   count: number
   side?: TileSide
 }
 
-const thumbnailParams = 'w=320&fm=webp&q=70'
+const BADGE_PREFIX = { left: '−', right: '+' } as const
 
-function thumbnailUrl(imageUrl: string) {
-  const separator = imageUrl.includes('?') ? '&' : '?'
-  return `${imageUrl}${separator}${thumbnailParams}`
-}
-
-export function CardTile({ card, count, side }: CardTileProps) {
-  const isHorizontal = card.type === 'Battlefield'
+export function CardTile({ code, card, count, side }: CardTileProps) {
+  const [imageFailed, setImageFailed] = useState(false)
+  const showImage = card !== undefined && !imageFailed
 
   return (
     <div
       className={cn(
         'relative overflow-hidden rounded-lg border-2 border-transparent',
-        isHorizontal
-          ? 'aspect-[1039/744] w-[calc(var(--card-width)*1.4)]'
-          : 'aspect-[744/1039] w-(--card-width)',
+        tileSizeClass(card?.type === 'Battlefield'),
         side === 'left' && 'border-side-left',
         side === 'right' && 'border-side-right',
+        !showImage && 'flex items-center justify-center bg-muted p-3 text-center',
       )}
     >
-      <img
-        src={thumbnailUrl(card.imageUrl)}
-        alt={card.name}
-        loading="lazy"
-        className="size-full object-cover"
-      />
+      {showImage ? (
+        <img
+          src={thumbnailUrl(card.imageUrl)}
+          alt={card.name}
+          loading="lazy"
+          onError={() => setImageFailed(true)}
+          className="size-full object-cover"
+        />
+      ) : (
+        <span className="text-lg font-bold break-all text-foreground">{card?.name ?? code}</span>
+      )}
 
       <span
         className={cn(
@@ -45,7 +49,7 @@ export function CardTile({ card, count, side }: CardTileProps) {
           !side && 'bg-side-right-light text-side-right-deep',
         )}
       >
-        x{count}
+        {side ? `${BADGE_PREFIX[side]}${count}` : `x${count}`}
       </span>
     </div>
   )
