@@ -1,0 +1,27 @@
+src/App.tsx
+  s_7d3470d70dd0f7::t_9d944f1e0c308d 4-5,9,12,88-89
+src/diff/changeList.test.ts
+  s_7d3470d70dd0f7::t_cf68658152ab84 5,136-184
+src/diff/changeList.ts
+  s_7d3470d70dd0f7::t_9f9532ed08b49e 82-97
+src/ui/ChangeList.tsx
+  s_7d3470d70dd0f7::t_afc5d944fa73cb 1-58
+src/ui/sectionTitles.ts
+  s_7d3470d70dd0f7::t_6fcc78314053ca 1-12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "09d8abbc5faefd9000400b0b821ed33fcac4054d",
+  "prompts": {},
+  "sessions": {
+    "s_7d3470d70dd0f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4d0472a3-adbf-4c4a-a56f-11a99e00e290",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
