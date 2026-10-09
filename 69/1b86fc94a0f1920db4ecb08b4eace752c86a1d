@@ -1,0 +1,25 @@
+src/App.tsx
+  s_7d3470d70dd0f7::t_8f6583e01f7cfa 7-8,11,44,47-48,56-77,89-93,101-102
+src/exampleDecks.ts
+  s_7d3470d70dd0f7::t_1e48511ba2e511 1-5
+src/ui/DeckInputs.tsx
+  s_7d3470d70dd0f7::t_a47d264f52a69a 11,23,53-60
+src/ui/ResultActions.tsx
+  s_7d3470d70dd0f7::t_374c80a31230a2 1-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "691b86fc94a0f1920db4ecb08b4eace752c86a1d",
+  "prompts": {},
+  "sessions": {
+    "s_7d3470d70dd0f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4d0472a3-adbf-4c4a-a56f-11a99e00e290",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
