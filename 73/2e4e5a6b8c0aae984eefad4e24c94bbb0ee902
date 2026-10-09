@@ -1,0 +1,23 @@
+src/App.tsx
+  s_7d3470d70dd0f7::t_918ebd2ff5d1da 1-2,5-8,12,23-35,38-60,64-67,70-89,93
+src/components/ui/textarea.tsx
+  s_7d3470d70dd0f7::t_667e4c17fbc8ab 1-18
+src/ui/DeckInputs.tsx
+  s_7d3470d70dd0f7::t_c80b7d90959864 1-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "732e4e5a6b8c0aae984eefad4e24c94bbb0ee902",
+  "prompts": {},
+  "sessions": {
+    "s_7d3470d70dd0f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4d0472a3-adbf-4c4a-a56f-11a99e00e290",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
