@@ -60,8 +60,8 @@ describe('readDecksFromSearch', () => {
 
     const decks = readDecksFromSearch(search, catalog)
 
-    expect(decks?.deckA).toEqual(decodeDeckCode(VEX_DECK_CODE, catalog))
-    expect(decks?.deckB).toEqual(decodeDeckCode(DECK_WITH_NEEKO, catalog))
+    expect(decks?.leftDeck).toEqual(decodeDeckCode(VEX_DECK_CODE, catalog))
+    expect(decks?.rightDeck).toEqual(decodeDeckCode(DECK_WITH_NEEKO, catalog))
   })
 
   it('reads the search without the question mark', () => {
@@ -87,7 +87,7 @@ describe('readDecksFromSearch', () => {
   it('ignores other parameters', () => {
     const search = `?x=1&left=${VEX_DECK_CODE}&right=${REKSAI_DECK_CODE}`
 
-    expect(readDecksFromSearch(search, catalog)?.deckB).toEqual(reksaiDeck)
+    expect(readDecksFromSearch(search, catalog)?.rightDeck).toEqual(reksaiDeck)
   })
 })
 
@@ -95,7 +95,7 @@ describe('building and reading back', () => {
   it('gives back the same two decks', () => {
     const decks = readDecksFromSearch(buildSearch(vexDeck, reksaiDeck), catalog)
 
-    expect(decks).toEqual({ deckA: vexDeck, deckB: reksaiDeck })
+    expect(decks).toEqual({ leftDeck: vexDeck, rightDeck: reksaiDeck })
   })
 
   it('keeps the additional legends of a deck', () => {
@@ -103,6 +103,6 @@ describe('building and reading back', () => {
 
     const decks = readDecksFromSearch(buildSearch(neekoDeck, vexDeck), catalog)
 
-    expect(decks?.deckA.additionalLegends).toEqual(neekoDeck.additionalLegends)
+    expect(decks?.leftDeck.additionalLegends).toEqual(neekoDeck.additionalLegends)
   })
 })

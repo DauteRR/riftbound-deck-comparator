@@ -1,7 +1,7 @@
 import type { Card } from '@/domain/card'
 import { cn } from '@/lib/utils'
 
-export type TileSide = 'a' | 'b'
+export type TileSide = 'left' | 'right'
 
 type CardTileProps = {
   card: Card
@@ -26,8 +26,8 @@ export function CardTile({ card, count, side }: CardTileProps) {
         isHorizontal
           ? 'aspect-[1039/744] w-[calc(var(--card-width)*1.4)]'
           : 'aspect-[744/1039] w-(--card-width)',
-        side === 'a' && 'border-side-a',
-        side === 'b' && 'border-side-b',
+        side === 'left' && 'border-side-left',
+        side === 'right' && 'border-side-right',
       )}
     >
       <img
@@ -40,9 +40,9 @@ export function CardTile({ card, count, side }: CardTileProps) {
       <span
         className={cn(
           'absolute bottom-2 left-1/2 -translate-x-1/2 rounded-md px-3 py-1.5 text-xl leading-none font-bold',
-          side === 'a' && 'bg-side-a text-side-a-deep',
-          side === 'b' && 'bg-side-b text-side-b-deep',
-          !side && 'bg-side-b-light text-side-b-deep',
+          side === 'left' && 'bg-side-left text-side-left-deep',
+          side === 'right' && 'bg-side-right text-side-right-deep',
+          !side && 'bg-side-right-light text-side-right-deep',
         )}
       >
         x{count}

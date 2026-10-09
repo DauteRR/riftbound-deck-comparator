@@ -16,8 +16,8 @@ function entry(code: string, count: number): SectionEntry {
 
 export const sampleSection = {
   title: 'Main deck',
-  onlyA: [entry('OGN-001', 2), entry('OGN-002', 1), entry('OGN-003', 3)],
-  onlyB: [entry('OGN-006', 1), entry('OGN-010', 2)],
+  onlyLeft: [entry('OGN-001', 2), entry('OGN-002', 1), entry('OGN-003', 3)],
+  onlyRight: [entry('OGN-006', 1), entry('OGN-010', 2)],
   common: [
     entry('OGN-011', 3),
     entry('OGN-012', 3),

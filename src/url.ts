@@ -3,10 +3,10 @@ import type { Deck } from '@/domain/deck'
 import { encodeDeckCode } from '@/parsing/deckCode'
 import { parseDeckInput } from '@/parsing/detect'
 
-export function buildSearch(deckA: Deck, deckB: Deck): string {
+export function buildSearch(leftDeck: Deck, rightDeck: Deck): string {
   const params = new URLSearchParams({
-    left: encodeDeckCode(deckA),
-    right: encodeDeckCode(deckB),
+    left: encodeDeckCode(leftDeck),
+    right: encodeDeckCode(rightDeck),
   })
 
   return `?${params}`
@@ -15,15 +15,15 @@ export function buildSearch(deckA: Deck, deckB: Deck): string {
 export function readDecksFromSearch(
   search: string,
   catalog: CardCatalog,
-): { deckA: Deck; deckB: Deck } | undefined {
+): { leftDeck: Deck; rightDeck: Deck } | undefined {
   const params = new URLSearchParams(search)
-  const left = params.get('left')
-  const right = params.get('right')
+  const leftInput = params.get('left')
+  const rightInput = params.get('right')
 
-  if (!left || !right) return undefined
+  if (!leftInput || !rightInput) return undefined
 
   return {
-    deckA: parseDeckInput(left, catalog),
-    deckB: parseDeckInput(right, catalog),
+    leftDeck: parseDeckInput(leftInput, catalog),
+    rightDeck: parseDeckInput(rightInput, catalog),
   }
 }
