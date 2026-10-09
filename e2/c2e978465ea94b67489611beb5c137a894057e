@@ -1,0 +1,21 @@
+src/diff/changeList.test.ts
+  s_7d3470d70dd0f7::t_79de2843d73da3 1-135
+src/diff/changeList.ts
+  s_7d3470d70dd0f7::t_8efaed2e3e4a76 1-81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e2c2e978465ea94b67489611beb5c137a894057e",
+  "prompts": {},
+  "sessions": {
+    "s_7d3470d70dd0f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4d0472a3-adbf-4c4a-a56f-11a99e00e290",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
