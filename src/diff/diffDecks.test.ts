@@ -160,6 +160,23 @@ describe('diffDecks', () => {
     }
   })
 
+  it('sorts unknown cards from sets that do not exist yet', () => {
+    const left = createEmptyDeck()
+    left.unknown = [
+      { code: 'XYZ-002', count: 1 },
+      { code: 'XYZ-001', count: 1 },
+      { code: 'Some Card Name', count: 1 },
+    ]
+
+    const { unknown } = diffDecks(left, createEmptyDeck(), catalog)
+
+    expect(unknown.onlyLeft.map((entry) => entry.code)).toEqual([
+      'Some Card Name',
+      'XYZ-001',
+      'XYZ-002',
+    ])
+  })
+
   it('compares unknown cards by code', () => {
     const left = createEmptyDeck()
     const right = createEmptyDeck()

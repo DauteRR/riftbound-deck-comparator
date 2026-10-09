@@ -1,6 +1,5 @@
 import type { CardCatalog } from '@/domain/cards'
 import { compareCards } from '@/domain/sort'
-import { compareCardCodes } from '@/domain/cardCode'
 import type { Deck, DeckEntry } from '@/domain/deck'
 
 export type SectionId =
@@ -118,7 +117,7 @@ function compareEntries(catalog: CardCatalog) {
     if (firstCard) return -1
     if (secondCard) return 1
 
-    return compareCardCodes(first.code, second.code)
+    return first.code.localeCompare(second.code)
   }
 }
 
