@@ -1,13 +1,14 @@
 import { useMemo, useState } from 'react'
-import { Button } from '@/components/ui/button'
 import { catalog } from '@/data/catalog'
 import { buildChangeList } from '@/diff/changeList'
 import { diffDecks } from '@/diff/diffDecks'
 import type { Deck } from '@/domain/deck'
 import { parseDeckInput } from '@/parsing/detect'
-import { readDecksFromSearch } from '@/url'
+import { EXAMPLE_LEFT_DECK_CODE, EXAMPLE_RIGHT_DECK_CODE } from '@/exampleDecks'
+import { buildSearch, readDecksFromSearch } from '@/url'
 import { ChangeList } from '@/ui/ChangeList'
 import { DeckInputs } from '@/ui/DeckInputs'
+import { ResultActions } from '@/ui/ResultActions'
 import { Section } from '@/ui/Section'
 import { SECTION_TITLES } from '@/ui/sectionTitles'
 import { toSectionProps } from '@/ui/sectionProps'
@@ -40,16 +41,38 @@ function App() {
     [comparedDecks],
   )
 
-  function compare() {
+  function compare(left: string, right: string) {
     try {
       setComparedDecks({
-        leftDeck: parseDeckInput(leftText, catalog),
-        rightDeck: parseDeckInput(rightText, catalog),
+        leftDeck: parseDeckInput(left, catalog),
+        rightDeck: parseDeckInput(right, catalog),
       })
       setError(undefined)
     } catch {
       setError('Could not read one of the decks. Check the deck code or the deck list.')
     }
+  }
+
+  function loadExample() {
+    setLeftText(EXAMPLE_LEFT_DECK_CODE)
+    setRightText(EXAMPLE_RIGHT_DECK_CODE)
+    compare(EXAMPLE_LEFT_DECK_CODE, EXAMPLE_RIGHT_DECK_CODE)
+  }
+
+  function swapDecks() {
+    setLeftText(rightText)
+    setRightText(leftText)
+    setComparedDecks((current) =>
+      current && { leftDeck: current.rightDeck, rightDeck: current.leftDeck },
+    )
+  }
+
+  function buildLink() {
+    if (!comparedDecks) return window.location.href
+
+    const { origin, pathname } = window.location
+
+    return `${origin}${pathname}${buildSearch(comparedDecks.leftDeck, comparedDecks.rightDeck)}`
   }
 
   return (
@@ -63,11 +86,11 @@ function App() {
 
       <div className="mx-auto flex max-w-[120rem] flex-col gap-12 px-8 py-4">
         {diff ? (
-          <div className="flex justify-center">
-            <Button variant="outline" size="lg" onClick={() => setComparedDecks(undefined)}>
-              Edit decks
-            </Button>
-          </div>
+          <ResultActions
+            onEdit={() => setComparedDecks(undefined)}
+            onSwap={swapDecks}
+            buildLink={buildLink}
+          />
         ) : (
           <DeckInputs
             leftText={leftText}
@@ -75,7 +98,8 @@ function App() {
             error={error}
             onLeftTextChange={setLeftText}
             onRightTextChange={setRightText}
-            onCompare={compare}
+            onCompare={() => compare(leftText, rightText)}
+            onLoadExample={loadExample}
           />
         )}
 

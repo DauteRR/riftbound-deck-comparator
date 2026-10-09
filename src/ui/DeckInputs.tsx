@@ -8,6 +8,7 @@ type DeckInputsProps = {
   onLeftTextChange: (text: string) => void
   onRightTextChange: (text: string) => void
   onCompare: () => void
+  onLoadExample: () => void
 }
 
 const PLACEHOLDER = 'Paste a deck code or a deck list'
@@ -19,6 +20,7 @@ export function DeckInputs({
   onLeftTextChange,
   onRightTextChange,
   onCompare,
+  onLoadExample,
 }: DeckInputsProps) {
   const canCompare = leftText.trim() !== '' && rightText.trim() !== ''
 
@@ -48,9 +50,14 @@ export function DeckInputs({
 
       {error && <p className="text-destructive">{error}</p>}
 
-      <Button size="lg" disabled={!canCompare} onClick={onCompare}>
-        Compare decks
-      </Button>
+      <div className="flex flex-wrap justify-center gap-4">
+        <Button size="lg" disabled={!canCompare} onClick={onCompare}>
+          Compare decks
+        </Button>
+        <Button variant="outline" size="lg" onClick={onLoadExample}>
+          Load example
+        </Button>
+      </div>
     </div>
   )
 }
