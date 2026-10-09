@@ -24,8 +24,6 @@ export function CardTile({ code, card, count, side }: CardTileProps) {
       className={cn(
         'relative overflow-hidden rounded-lg border-2 border-transparent',
         tileSizeClass(card?.type === 'Battlefield'),
-        side === 'left' && 'border-side-left',
-        side === 'right' && 'border-side-right',
         !showImage && 'flex items-center justify-center bg-muted p-3 text-center',
       )}
     >
