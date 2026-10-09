@@ -27,3 +27,6 @@ dist-ssr
 PLAN.md
 
 scripts/.cache
+
+test-results
+playwright-report
