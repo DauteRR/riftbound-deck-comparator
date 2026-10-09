@@ -1,0 +1,21 @@
+LICENSE
+  s_7d3470d70dd0f7::t_e5127baa1717ce 1-21
+README.md
+  s_7d3470d70dd0f7::t_3541553ef1b1d7 35,59-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "92b19bb36c66f5f9ff7672894a0dba8a47695d93",
+  "prompts": {},
+  "sessions": {
+    "s_7d3470d70dd0f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4d0472a3-adbf-4c4a-a56f-11a99e00e290",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
