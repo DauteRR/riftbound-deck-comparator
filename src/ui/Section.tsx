@@ -17,6 +17,7 @@ type SectionProps = {
   leftGaps?: number
   rightGaps?: number
   hasHorizontalCards?: boolean
+  hideSingleCommonBadges?: boolean
 }
 
 export function Section({
@@ -27,6 +28,7 @@ export function Section({
   leftGaps = 0,
   rightGaps = 0,
   hasHorizontalCards = false,
+  hideSingleCommonBadges = false,
 }: SectionProps) {
   const sideWidthClass = hasHorizontalCards
     ? 'max-w-[calc(var(--card-width)*1.4*var(--columns)+var(--card-gap)*(var(--columns)-1))]'
@@ -61,7 +63,11 @@ export function Section({
 
         <div className="mt-6 flex flex-wrap justify-center gap-6">
           {common.map((entry) => (
-            <CardTile key={entry.code} {...entry} />
+            <CardTile
+              key={entry.code}
+              {...entry}
+              showBadge={!(hideSingleCommonBadges && entry.count === 1)}
+            />
           ))}
         </div>
       </div>

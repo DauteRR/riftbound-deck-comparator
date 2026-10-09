@@ -16,5 +16,6 @@ export function toSectionProps(title: string, diff: SectionDiff, catalog: CardCa
     leftGaps: diff.leftGaps,
     rightGaps: diff.rightGaps,
     hasHorizontalCards: diff.id === 'battlefields',
+    hideSingleCommonBadges: diff.id === 'legendAndChosen',
   }
 }

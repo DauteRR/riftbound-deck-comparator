@@ -11,11 +11,12 @@ type CardTileProps = {
   card?: Card
   count: number
   side?: TileSide
+  showBadge?: boolean
 }
 
 const BADGE_PREFIX = { left: '−', right: '+' } as const
 
-export function CardTile({ code, card, count, side }: CardTileProps) {
+export function CardTile({ code, card, count, side, showBadge = true }: CardTileProps) {
   const [imageFailed, setImageFailed] = useState(false)
   const showImage = card !== undefined && !imageFailed
 
@@ -39,16 +40,18 @@ export function CardTile({ code, card, count, side }: CardTileProps) {
         <span className="text-lg font-bold break-all text-foreground">{card?.name ?? code}</span>
       )}
 
-      <span
-        className={cn(
-          'absolute bottom-2 left-1/2 -translate-x-1/2 rounded-md px-3 py-1.5 text-xl leading-none font-bold',
-          side === 'left' && 'bg-side-left text-side-left-deep',
-          side === 'right' && 'bg-side-right text-side-right-deep',
-          !side && 'bg-side-right-light text-side-right-deep',
-        )}
-      >
-        {side ? `${BADGE_PREFIX[side]}${count}` : `x${count}`}
-      </span>
+      {showBadge && (
+        <span
+          className={cn(
+            'absolute bottom-2 left-1/2 -translate-x-1/2 rounded-md px-3 py-1.5 text-xl leading-none font-bold',
+            side === 'left' && 'bg-side-left text-side-left-deep',
+            side === 'right' && 'bg-side-right text-side-right-deep',
+            !side && 'bg-side-right-light text-side-right-deep',
+          )}
+        >
+          {side ? `${BADGE_PREFIX[side]}${count}` : `x${count}`}
+        </span>
+      )}
     </div>
   )
 }
