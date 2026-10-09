@@ -1,0 +1,29 @@
+src/domain/cardCode.ts
+  s_1278e477482704::t_c3c6203fb7b1cb 20-28
+src/parsing/deckCode.ts
+  s_1278e477482704::t_0dcb9fe1bd21fb 6,76
+src/parsing/detect.test.ts
+  s_1278e477482704::t_b732b41d53a55a 1-42
+src/parsing/detect.ts
+  s_1278e477482704::t_0a8e58f20e1237 1-14
+src/url.test.ts
+  s_1278e477482704::t_a8bf5058371624 1-108
+src/url.ts
+  s_1278e477482704::t_d4eba669fff3cf 1-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d7274b28d5b168c07bdd5380fd480f02cf88d1c8",
+  "prompts": {},
+  "sessions": {
+    "s_1278e477482704": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "909aec16-7eab-4072-a1b8-a2efcb678fd1",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
