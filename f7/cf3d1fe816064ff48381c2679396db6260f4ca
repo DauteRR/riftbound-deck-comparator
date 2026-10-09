@@ -1,0 +1,27 @@
+src/diff/changeList.ts
+  s_7d3470d70dd0f7::t_cf04b6e2c6595a 18
+src/diff/diffDecks.test.ts
+  s_7d3470d70dd0f7::t_63ccf740134a52 117,122-123,126,129,132-133
+src/diff/diffDecks.ts
+  s_7d3470d70dd0f7::t_91acb941312c2b 7,41,58,70-71
+src/ui/sectionProps.ts
+  s_7d3470d70dd0f7::t_625f50d62698ff 19
+src/ui/sectionTitles.ts
+  s_7d3470d70dd0f7::t_ad5d85aabff91c 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f7cf3d1fe816064ff48381c2679396db6260f4ca",
+  "prompts": {},
+  "sessions": {
+    "s_7d3470d70dd0f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4d0472a3-adbf-4c4a-a56f-11a99e00e290",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
