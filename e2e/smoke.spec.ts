@@ -38,6 +38,8 @@ test('loading the example shows every section and the change list', async ({ pag
   }
   await expect(page.getByText('make the following changes')).toBeVisible()
   await expect(page.getByRole('button', { name: 'Edit decks' })).toBeVisible()
+  await expect(page.getByText('Riot Games does not endorse or sponsor this project.')).toBeVisible()
+  await expect(page.getByText(/supports cards up to set [A-Z]+/)).toBeVisible()
   expect(errors).toEqual([])
 })
 

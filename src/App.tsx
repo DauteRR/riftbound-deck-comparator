@@ -8,6 +8,7 @@ import { EXAMPLE_LEFT_DECK_CODE, EXAMPLE_RIGHT_DECK_CODE } from '@/exampleDecks'
 import { buildSearch, readDecksFromSearch } from '@/url'
 import { ChangeList } from '@/ui/ChangeList'
 import { DeckInputs } from '@/ui/DeckInputs'
+import { Footer } from '@/ui/Footer'
 import { ResultActions } from '@/ui/ResultActions'
 import { Section } from '@/ui/Section'
 import { SECTION_TITLES } from '@/ui/sectionTitles'
@@ -76,7 +77,7 @@ function App() {
   }
 
   return (
-    <main className="min-h-svh">
+    <main className="flex min-h-svh flex-col">
       <header className="flex flex-col items-center gap-3 px-6 py-8">
         <img src={`${import.meta.env.BASE_URL}logo.png`} alt="" className="size-32" />
         <h1 className="text-center text-4xl font-bold tracking-tight text-gold">
@@ -84,7 +85,7 @@ function App() {
         </h1>
       </header>
 
-      <div className="mx-auto flex max-w-[120rem] flex-col gap-12 px-8 py-4">
+      <div className="mx-auto flex w-full max-w-[120rem] flex-1 flex-col gap-12 px-8 py-4">
         {diff ? (
           <ResultActions
             onEdit={() => setComparedDecks(undefined)}
@@ -112,6 +113,8 @@ function App() {
 
         {diff && <ChangeList changes={buildChangeList(diff, catalog)} catalog={catalog} />}
       </div>
+
+      <Footer />
     </main>
   )
 }
