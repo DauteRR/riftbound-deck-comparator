@@ -1,0 +1,21 @@
+src/diff/diffDecks.test.ts
+  s_7d3470d70dd0f7::t_760b0204969da0 1-177
+src/diff/diffDecks.ts
+  s_7d3470d70dd0f7::t_9ef05a5b9bd23e 1-170
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b4104b7e4d10d3932d17220e0e0e82560310a065",
+  "prompts": {},
+  "sessions": {
+    "s_7d3470d70dd0f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4d0472a3-adbf-4c4a-a56f-11a99e00e290",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
