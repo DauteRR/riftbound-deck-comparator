@@ -1,0 +1,31 @@
+.github/workflows/ci.yml
+  s_7d3470d70dd0f7::t_e8037ee97cf1cb 31-32
+.gitignore
+  s_7d3470d70dd0f7::t_10526dde0642a5 30-32
+package.json
+  s_7d3470d70dd0f7::t_1ea100a25d9504 13,32
+playwright.config.ts
+  s_7d3470d70dd0f7::t_f8d56adee5911e 1-19
+vite.config.ts
+  s_7d3470d70dd0f7::t_249b06a88ad960 4,18
+e2e/smoke.spec.ts
+  s_7d3470d70dd0f7::t_da3b336705e904 1-58
+pnpm-lock.yaml
+  s_7d3470d70dd0f7::t_8acc7bcbd59ac3 51-53,408-412,2331-2340,3176-3179,4934-4939
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "41a1c6fb5f3a361170ae9e08dee5a1e51b21885d",
+  "prompts": {},
+  "sessions": {
+    "s_7d3470d70dd0f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4d0472a3-adbf-4c4a-a56f-11a99e00e290",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
