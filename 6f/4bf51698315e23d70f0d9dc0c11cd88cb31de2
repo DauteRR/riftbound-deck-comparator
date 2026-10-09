@@ -1,0 +1,23 @@
+src/ui/CardTile.tsx
+  s_7d3470d70dd0f7::t_35fe2dc95093c2 14,19,43-54
+src/ui/Section.tsx
+  s_7d3470d70dd0f7::t_38c32dd8fadc97 20,31,66-70
+src/ui/sectionProps.ts
+  s_7d3470d70dd0f7::t_745dbe23c50678 19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6f4bf51698315e23d70f0d9dc0c11cd88cb31de2",
+  "prompts": {},
+  "sessions": {
+    "s_7d3470d70dd0f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4d0472a3-adbf-4c4a-a56f-11a99e00e290",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
