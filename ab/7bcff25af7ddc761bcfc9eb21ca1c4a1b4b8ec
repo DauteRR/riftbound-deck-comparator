@@ -1,0 +1,27 @@
+e2e/smoke.spec.ts
+  s_7d3470d70dd0f7::t_071870480133ba 41-42
+src/App.tsx
+  s_7d3470d70dd0f7::t_300a17e73b38f2 11,80,88,116-117
+src/domain/sets.test.ts
+  s_7d3470d70dd0f7::t_019d8a44d53928 1-36
+src/domain/sets.ts
+  s_7d3470d70dd0f7::t_a198bfaea3f8ce 1-17
+src/ui/Footer.tsx
+  s_7d3470d70dd0f7::t_5a41da62b01e40 1-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ab7bcff25af7ddc761bcfc9eb21ca1c4a1b4b8ec",
+  "prompts": {},
+  "sessions": {
+    "s_7d3470d70dd0f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4d0472a3-adbf-4c4a-a56f-11a99e00e290",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
