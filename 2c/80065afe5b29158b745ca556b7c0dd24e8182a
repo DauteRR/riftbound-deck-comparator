@@ -1,0 +1,23 @@
+scripts/convert-cards.ts
+  s_ae84e5d15ded0d::t_94288e9cf41654 25-31,34,42-45,126
+scripts/fetch-gallery.ts
+  s_ae84e5d15ded0d::t_054a6afb68eaeb 13,17
+src/data/cards.json
+  s_ae84e5d15ded0d::t_7f68f8d8dbb435 1182,1185-1187,1196-1197,1200,1205,1209-1211,1213,1220-1222,1225,1229,1231,1234-1236,1247-1250,1262-1263,1265,1280,1282,1290-1292,1296,1301-1303,1312-1315,1318,1324-1327,1343,1367,1371
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2c80065afe5b29158b745ca556b7c0dd24e8182a",
+  "prompts": {},
+  "sessions": {
+    "s_ae84e5d15ded0d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "af4e9fee-4491-43fe-8c4d-cc5fbf16d308",
+        "model": "unknown"
+      },
+      "human_author": "Daute Rodríguez <dauterguezrguez@gmail.com>"
+    }
+  }
+}
