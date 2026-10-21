@@ -22,14 +22,25 @@ type ConvertedCard = Omit<Card, 'isAlternate'>
 
 const toCode = (galleryCard: GalleryCard) => galleryCard.publicCode.split('/')[0]
 
+// Some cards come with an empty cardType, but the image description starts with it ("Riftbound Unit: ...")
+function toCardTypeFromImage(galleryCard: GalleryCard): CardType | undefined {
+  const label = galleryCard.cardImage.accessibilityText?.match(/^Riftbound ([A-Za-z]+)/)?.[1]
+
+  return CARD_TYPES.find((type) => type === label)
+}
+
 function toCardType(galleryCard: GalleryCard): CardType | undefined {
   const label = galleryCard.cardType.type[0]?.label
-  if (label === undefined) return undefined
+  if (label === undefined) return toCardTypeFromImage(galleryCard)
 
   const cardType = CARD_TYPES.find((type) => type === label)
   if (!cardType) throw new Error(`Unknown card type "${label}" in ${galleryCard.id}`)
 
   return cardType
+}
+
+function hasTokenSuperType(galleryCard: GalleryCard): boolean {
+  return galleryCard.cardType.superType?.some((superType) => superType.id === 'token') ?? false
 }
 
 function isToken(galleryCard: GalleryCard, type: CardType): boolean {
@@ -112,7 +123,7 @@ export function convertGalleryCards(gallery: Gallery): ConversionResult {
     const type = toCardType(galleryCard)
 
     if (!type) {
-      discardedCards.push(toDiscardedCard(galleryCard, 'withoutType'))
+      discardedCards.push(toDiscardedCard(galleryCard, hasTokenSuperType(galleryCard) ? 'token' : 'withoutType'))
       continue
     }
 

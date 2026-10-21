@@ -10,11 +10,11 @@ export type GalleryCard = {
   subtitle?: string
   publicCode: string
   set: { value: { id: string } }
-  cardType: { type: Array<{ label: string }> }
+  cardType: { type: Array<{ label: string }>; superType?: Array<{ id: string }> }
   energy?: { value: { id: number } }
   power?: { value: { id: number } }
   tags?: { tags: string[] }
-  cardImage: { url: string }
+  cardImage: { url: string; accessibilityText?: string }
 }
 
 export type GallerySet = {
